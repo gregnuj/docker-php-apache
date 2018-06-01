@@ -1,0 +1,10 @@
+FROM php:5.6-apache
+
+LABEL MAINTAINER="Greg Junge <gregnuj@gmail.com>"
+
+## Install extras
+RUN apt-get update \
+    && apt-get install -y \
+    bash cron curl git socat unzip vim openssh-client \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
